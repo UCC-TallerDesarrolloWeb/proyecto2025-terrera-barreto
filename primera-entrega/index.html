@@ -20,7 +20,7 @@
         </a>
         <a class="header-button" href="#" aria-label="Carrito">
             <span>Carrito</span>
-            <span>4</span>
+            <span id="cart-counter"></span>
         </a>
     </div>
     <div class="header-logo">
@@ -38,7 +38,7 @@
         <div class="carousel-content">
             <h2>PROMO 2x1 en pizzas medianas</h2>
             <p>Compra 1 y llévate 1 igual gratis, sólo por hoy.</p>
-            <button>Pedir ahora</button>
+            <button id="order-now">Pedir ahora</button>
         </div>
         <div class="carousel-image">
             <img src="./src/assets/images/carousel_pizza.png" alt="">
@@ -47,130 +47,64 @@
     <div class="menu-container">
         <h3>Menú</h3>
         <p>¿Que vas a pedir hoy?</p>
-        <div class="products-container">
-            <div class="product-container">
-                <img src="./src/assets/images/muzzarella.png" alt="">
-                <h4>Muzzarella</h4>
-                <p>Queso fundido, masa crocante.</p>
-                <div class="size-selector">
-                    <div class="size">
-                        <span>S</span>
-                        <span>$100</span>
-                    </div>
-                    <div class="size">
-                        <span>M</span>
-                        <span>$130</span>
-                    </div>
-                    <div class="size">
-                        <span>L</span>
-                        <span>$145</span>
-                    </div>
-                </div>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-container">
-                <img src="./src/assets/images/fugazzeta.png" alt="">
-                <h4>Fugazzeta</h4>
-                <p>Cebolla caramelizada y mucho queso.</p>
-                <div class="size-selector">
-                    <div class="size">
-                        <span>S</span>
-                        <span>$100</span>
-                    </div>
-                    <div class="size">
-                        <span>M</span>
-                        <span>$130</span>
-                    </div>
-                    <div class="size">
-                        <span>L</span>
-                        <span>$145</span>
-                    </div>
-                </div>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-container">
-                <img src="./src/assets/images/margarita.png" alt="">
-                <h4>Margarita</h4>
-                <p>Tomate, mozzarella y albahaca.</p>
-                <div class="size-selector">
-                    <div class="size">
-                        <span>S</span>
-                        <span>$100</span>
-                    </div>
-                    <div class="size">
-                        <span>M</span>
-                        <span>$130</span>
-                    </div>
-                    <div class="size">
-                        <span>L</span>
-                        <span>$145</span>
-                    </div>
-                </div>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-container">
-                <img src="./src/assets/images/jyq.png" alt="">
-                <h4>Jamón y Queso</h4>
-                <p>Jamón jugoso y queso derretido.</p>
-                <div class="size-selector">
-                    <div class="size">
-                        <span>S</span>
-                        <span>$100</span>
-                    </div>
-                    <div class="size">
-                        <span>M</span>
-                        <span>$130</span>
-                    </div>
-                    <div class="size">
-                        <span>L</span>
-                        <span>$145</span>
-                    </div>
-                </div>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-container">
-                <img src="./src/assets/images/pepperoni.png" alt="">
-                <h4>Pepperoni</h4>
-                <p>Rodajas picantes y crujientes</p>
-                <div class="size-selector">
-                    <div class="size">
-                        <span>S</span>
-                        <span>$100</span>
-                    </div>
-                    <div class="size">
-                        <span>M</span>
-                        <span>$130</span>
-                    </div>
-                    <div class="size">
-                        <span>L</span>
-                        <span>$145</span>
-                    </div>
-                </div>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-container">
-                <img src="./src/assets/images/bacon.png" alt="">
-                <h4>Bacon</h4>
-                <p>Bacon ahumado, bien crocante.</p>
-                <div class="size-selector">
-                    <div class="size">
-                        <span>S</span>
-                        <span>$100</span>
-                    </div>
-                    <div class="size">
-                        <span>M</span>
-                        <span>$130</span>
-                    </div>
-                    <div class="size">
-                        <span>L</span>
-                        <span>$145</span>
-                    </div>
-                </div>
-                <button>Agregar al Carrito</button>
-            </div>
+        <div class="products-container" id="products-container">
         </div>
     </div>
 </section>
-
+<footer>
+    <div class="contact-information">
+        <strong>Contacto</strong>
+        <p>Tel: +54 9 11 1234-5678</p>
+        <p>Email: contacto@mmmenu.com</p>
+        <strong>Dirección</strong>
+        <p>Av. Siempre Viva 123, Córdoba, AR</p>
+        <strong>Horario</strong>
+        <p>Lun–Dom: 12:00 — 23:00</p>
+    </div>
+    <div class="policies-information">
+        <strong>Políticas</strong>
+        <p>
+            <a href="#">Términos y Condiciones</a>
+            ·
+            <a href="#">Política de Privacidad</a>
+            ·
+            <a href="#">Política de Cookies</a>
+        </p>
+        <strong>Soporte</strong>
+        <p>
+            ¿Problemas con un pedido?
+            <br>
+            Contactanos por email a <span>soporte@mmmenu.com</span>
+        </p>
+        <div class="copyright">
+            Copyright © 2025 Mmmenu · Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+<div class="cart-container">
+    <div class="cart">
+        <h3>Carrito</h3>
+        <span>2 productos</span>
+        <div class="cart-products-container">
+            <div class="cart-product">
+                <img src="./src/assets/images/margarita.png" alt="">
+                <div class="cart-product-info">
+                    <h5>Margarita</h5>
+                    <span>Tamaño: S</span>
+                </div>
+                <div class="cart-product-quantity">
+                    <button>-</button>
+                    <span>2</span>
+                    <button>+</button>
+                </div>
+            </div>
+            <div class="cart-total">
+                <span>Total: $300</span>
+                <button>Confirmar Productos</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./src/scripts/main.js"></script>
 </body>
 </html>
