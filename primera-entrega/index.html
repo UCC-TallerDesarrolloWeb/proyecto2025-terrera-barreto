@@ -1,113 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mmmenú</title>
-    <link rel="stylesheet" href="./src/styles/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="header-left">
-        <a class="header-button" href="#menu" aria-label="Menú">
-          <span>Menú</span>
-        </a>
-        <a class="header-button" href="#" aria-label="Carrito">
-          <span>Carrito</span>
-          <span id="cart-counter"></span>
-        </a>
-      </div>
-      <div class="header-logo">
-        <img src="./src/assets/images/logo.png" alt="" />
-        <h1>Mmmenú</h1>
-      </div>
-      <div class="header-right">
-        <address class="header-contact" aria-label="Teléfono de contacto">
-          <a href="tel:+543518583498">+54 351 858 3498</a>
-        </address>
-      </div>
-    </header>
-    <section>
-      <div class="carousel">
-        <div class="carousel-content">
-          <h2>Proba nuestra nueva pizza de pepperoni</h2>
-          <p>Con albahaca fresca, recien salida del horno.</p>
-          <button id="order-now">Pedir ahora</button>
-        </div>
-        <div class="carousel-image">
-          <img src="./src/assets/images/carousel_pizza.png" alt="" />
-        </div>
-      </div>
-      <div class="menu-container">
-        <h3>Menú</h3>
-        <p>¿Que vas a pedir hoy?</p>
-        <div class="products-container" id="products-container"></div>
-      </div>
-    </section>
-    <footer>
-      <div class="contact-information">
-        <strong>Contacto</strong>
-        <p>Tel: +54 9 11 1234-5678</p>
-        <p>Email: contacto@mmmenu.com</p>
-        <strong>Dirección</strong>
-        <p>Av. Siempre Viva 123, Córdoba, AR</p>
-        <strong>Horario</strong>
-        <p>Lun–Dom: 12:00 — 23:00</p>
-      </div>
-      <div class="policies-information">
-        <strong>Políticas</strong>
-        <p>
-          <a href="#">Términos y Condiciones</a>
-          ·
-          <a href="#">Política de Privacidad</a>
-          ·
-          <a href="#">Política de Cookies</a>
-        </p>
-        <strong>Soporte</strong>
-        <p>
-          ¿Problemas con un pedido?
-          <br />
-          Contactanos por email a <span>soporte@mmmenu.com</span>
-        </p>
-        <div class="copyright">
-          Copyright © 2025 Mmmenu · Todos los derechos reservados.
-        </div>
-      </div>
-    </footer>
-    <div class="cart-container">
-      <div class="cart">
-        <h3>Carrito</h3>
-        <span>2 productos</span>
-        <div class="cart-products-container">
-          <div class="cart-product">
-            <img src="./src/assets/images/margarita.png" alt="" />
-            <div class="cart-product-info">
-              <h5>Margarita</h5>
-              <span>Tamaño: S</span>
-            </div>
-            <div class="cart-product-quantity">
-              <button>-</button>
-              <span>2</span>
-              <button>+</button>
-            </div>
-          </div>
-          <div class="cart-total">
-            <span>Total: $300</span>
-            <button>Confirmar Productos</button>
-          </div>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mmmenú</title>
+
+  <meta name="author" content="Luciano Barreto, Athina Terrera">
+  <meta name="description" content="Mmmenú - Pizzería online en Córdoba. Pedí pizza artesanal: muzzarella, fugazzeta, pepperoni y más. Envío rápido y promos 2x1 en medianas.">
+  <meta name="keywords" content="pizzería, pedido online, pizzas, muzzarella, fugazzeta, pepperoni, delivery, Córdoba, Mmmenú">
+
+  <link rel="stylesheet" href="./src/styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+  <link rel="icon" href="./src/assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <nav class="header-left">
+    <a class="header-button" href="#menu" aria-label="Menú">
+      <span>Menú</span>
+    </a>
+  </nav>
+  <div class="header-logo">
+    <img src="./src/assets/images/logo.png" alt="Mmmenú logo">
+    <h1>Mmmenú</h1>
+  </div>
+  <nav class="header-right">
+    <a href="#" id="open-cart-button">
+      <span>Carrito</span>
+      <span id="cart-counter"></span>
+    </a>
+  </nav>
+</header>
+<section>
+  <div class="carousel">
+    <div class="carousel-content">
+      <h2>Probá nuestra NUEVA Margarita</h2>
+      <p>Con albahaca fresca y recién salida del horno :)</p>
+      <button id="order-now">Pedir ahora</button>
     </div>
-    <script src="./src/scripts/main.js"></script>
-  </body>
+    <div class="carousel-image">
+      <img src="./src/assets/images/carousel_pizza.png" alt="Imagen de pizza margarita con fondo">
+    </div>
+  </div>
+  <div class="menu-container">
+    <h3>Menú</h3>
+    <p>¿Qué vas a pedir hoy?</p>
+    <div class="products-container" id="products-container"></div>
+  </div>
+</section>
+<footer>
+  <div class="contact-information">
+    <strong>Contacto</strong>
+    <p>Tel: +54 9 11 1234-5678</p>
+    <p>Email: contacto@mmmenu.com</p>
+    <strong>Dirección</strong>
+    <p>Av. Siempre Viva 123, Córdoba, AR</p>
+    <strong>Horario</strong>
+    <p>Lun–Dom: 12:00 — 23:00</p>
+  </div>
+  <div class="policies-information">
+    <strong>Políticas</strong>
+    <p>
+      <a href="#">Términos y Condiciones</a>
+      ·
+      <a href="#">Política de Privacidad</a>
+      ·
+      <a href="#">Política de Cookies</a>
+    </p>
+    <strong>Soporte</strong>
+    <p>
+      ¿Problemas con un pedido?
+      <br>
+      Contactanos por email a <span>soporte@mmmenu.com</span>
+    </p>
+    <div class="copyright">
+      Copyright © 2025 Mmmenú LLC · Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+<div class="cart-container" id="cart-container">
+  <div class="cart">
+    <div class="close-cart-button" id="close-cart-button">Cerrar</div>
+    <h3>Carrito</h3>
+    <span id="products-counter"></span>
+
+    <form class="cart-form" style="display:none;" novalidate id="cart-form">
+      <label for="user-name">Nombre y apellido:</label>
+      <input
+              type="text"
+              id="user-name"
+              name="user-name"
+              placeholder="Jhon Doe"
+              size="30"
+              maxlength="50"
+              autocomplete="name"
+      >
+
+      <label for="user-address">Dirección:</label>
+      <input
+              type="text"
+              id="user-address"
+              name="user-address"
+              placeholder="Av. Siempre Viva 123"
+              size="40"
+              maxlength="100"
+              autocomplete="street-address"
+      >
+
+      <p>Método de pago:</p>
+      <div class="payment-radio-container">
+        <label for="payment-cash">Efectivo:</label>
+        <input type="radio" id="payment-cash" name="payment-method" value="cash">
+
+        <label for="payment-card">Débito/Crédito:</label>
+        <input type="radio" id="payment-card" name="payment-method" value="card">
+      </div>
+
+      <div class="cart-form-footer">
+        <span id="product-total">Productos: $0</span>
+        <span id="taxes">Impuestos (5%): $0</span>
+        <h5 id="grand-total">Total: $0</h5>
+
+        <div class="cart-form-footer-buttons">
+          <button type="button" id="btn-back">Volver</button>
+          <button type="submit" id="btn-buy">Comprar</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="cart-products-container" id="cart-products-container">
+    </div>
+  </div>
+</div>
+<script src="./src/scripts/main.js"></script>
+</body>
 </html>
