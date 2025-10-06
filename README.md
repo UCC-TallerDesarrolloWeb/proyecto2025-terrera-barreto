@@ -27,7 +27,7 @@ Nuestro proyecto de pagina web llamado **Mmmenu**, consiste en una pagina de env
 
 ## Enlace al sitio
 
-GitHub Pages:
+GitHub Pages: https://luchobarreto.github.io/proyecto2025-terrera-barreto/
 
 ## Contenido de la página
 
