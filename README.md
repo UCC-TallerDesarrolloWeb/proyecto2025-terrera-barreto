@@ -10,53 +10,41 @@
 
 ---
 
-## 🧾 Descripción del proyecto
+## Descripción del proyecto
 
-Este proyecto consiste en una **página web personal** desarrollada como práctica de HTML, CSS y JavaScript.  
-Su propósito es mostrar información personal, proyectos previos y enlaces a redes sociales profesionales.
+### Mmmenu
 
----
+Nuestro proyecto de pagina web llamado **Mmmenu**, consiste en una pagina de envios de pizza.
 
-## 👩‍💻 Autores
+## Autores
 
-| Nombre          | Rol                    |
-| --------------- | ---------------------- |
-| **Juan Pérez**  | Desarrollador Frontend |
-| **María López** | Diseñadora UX/UI       |
-
----
-
-## 🔗 Enlace al sitio
-
-El proyecto está disponible en GitHub Pages:  
-👉 [https://usuario.github.io/mi-proyecto/](https://usuario.github.io/mi-proyecto/)
+| Nombre  | Apellido |
+| ------- | -------- |
+| Barreto | Luciano  |
+| Terrera | Athina   |
 
 ---
 
-## 📂 Contenido de la página
+## Enlace al sitio
 
-- **Inicio:** Presentación personal con imagen y breve biografía.
-- **Proyectos:** Muestra los trabajos y repositorios más destacados.
-- **Contacto:** Formulario para enviar mensajes o consultas.
-- **Footer:** Enlaces a redes sociales y créditos.
+GitHub Pages:
 
----
+## Contenido de la página
 
-## ⚙️ Tecnologías utilizadas
-
-| Tecnología       | Descripción                 |
-| ---------------- | --------------------------- |
-| **HTML5**        | Estructura del sitio        |
-| **CSS3**         | Estilos y diseño responsivo |
-| **JavaScript**   | Interactividad              |
-| **GitHub Pages** | Publicación del sitio       |
-| **VS Code**      | Editor de desarrollo        |
+- **Header:** Nombre de la pagina, logo, boton hacia carrito y menu.
+- **Home:** Pagina de inicio y catalogo de productos.
+- **Carrito:** Informacion de compra y cliente.
+- **Footer:** Informacion de contacto
 
 ---
 
-## 🧩 Instalación y uso
+## Tecnologías utilizadas
 
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/usuario/mi-proyecto.git
-   ```
+| Tecnología       | Descripción                             |
+| ---------------- | --------------------------------------- |
+| **HTML5**        | Estructura de la pagina                 |
+| **CSS3**         | Estilos y diseño responsivo             |
+| **JavaScript**   | Interactividad                          |
+| **GitHub Pages** | Publicación del sitio                   |
+| **VS Code**      | Editor de desarrollo                    |
+| **Figma**        | Desarrollo de mockup (desktop y mobile) |
