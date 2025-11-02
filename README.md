@@ -1,6 +1,6 @@
 # Proyecto 2025 (primera entrega)
 
-## Informacion del proyecto
+## Información del proyecto
 
 - [Descripción del proyecto](#descripción-del-proyecto)
 - [Autores](#autores)
@@ -14,7 +14,7 @@
 
 ### Mmmenu
 
-Nuestro proyecto de pagina web llamado **Mmmenu**, consiste en una pagina de envios de pizza.
+Nuestro proyecto de página web llamado **Mmmenu**, consiste en una página de envios de pizza.
 
 ## Autores
 
@@ -31,10 +31,10 @@ GitHub Pages: https://luchobarreto.github.io/proyecto2025-terrera-barreto/
 
 ## Contenido de la página
 
-- **Header:** Nombre de la pagina, logo, boton hacia carrito y menu.
-- **Home:** Pagina de inicio y catalogo de productos.
-- **Carrito:** Informacion de compra y cliente.
-- **Footer:** Informacion de contacto
+- **Header:** Nombre de la página, logo, botón hacia carrito y menú.
+- **Home:** Página de inicio y catálogo de productos.
+- **Carrito:** Información de compra y cliente.
+- **Footer:** Información de contacto
 
 ---
 
@@ -42,7 +42,7 @@ GitHub Pages: https://luchobarreto.github.io/proyecto2025-terrera-barreto/
 
 | Tecnología       | Descripción                             |
 | ---------------- | --------------------------------------- |
-| **HTML5**        | Estructura de la pagina                 |
+| **HTML5**        | Estructura de la página                 |
 | **CSS3**         | Estilos y diseño responsivo             |
 | **JavaScript**   | Interactividad                          |
 | **GitHub Pages** | Publicación del sitio                   |
