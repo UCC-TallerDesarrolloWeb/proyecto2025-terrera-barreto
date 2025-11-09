@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Muzzarella",
+    "description": "Queso fundido, masa crocante.",
+    "image": "muzzarella.png",
+    "sizes": { "S": 100, "M": 130, "L": 160 }
+  },
+  {
+    "id": 2,
+    "name": "Fugazzeta",
+    "description": "Cebolla caramelizada y mucho queso.",
+    "image": "fugazzeta.png",
+    "sizes": { "S": 110, "M": 145, "L": 170 }
+  },
+  {
+    "id": 3,
+    "name": "Margarita",
+    "description": "Tomate, mozzarella y albahaca.",
+    "image": "margarita.png",
+    "sizes": { "S": 95, "M": 125 }
+  },
+  {
+    "id": 4,
+    "name": "Jamón y Queso",
+    "description": "Jamón jugoso y queso derretido.",
+    "image": "jyq.png",
+    "sizes": { "S": 120, "M": 150, "L": 180 }
+  },
+  {
+    "id": 5,
+    "name": "Pepperoni",
+    "description": "Rodajas picantes y crujientes de pepperoni.",
+    "image": "pepperoni.png",
+    "sizes": { "S": 130, "M": 165, "L": 190 }
+  },
+  {
+    "id": 6,
+    "name": "Bacon",
+    "description": "Bacon ahumado, bien crocante.",
+    "image": "bacon.png",
+    "sizes": { "S": 115, "M": 140 }
+  }
+]

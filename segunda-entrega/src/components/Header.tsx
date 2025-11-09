@@ -11,6 +11,7 @@ const HeaderContainer = styled.header`
     justify-content: center;
     align-items: center;
     gap: 60px;
+    padding: 16px 0;
     
     & > span:first-of-type {
         margin-left: auto;
@@ -50,6 +51,9 @@ const Header: React.FC = () => {
                     Mmmenú
                 </LogoText>
             </LogoContainer>
+            <TextButton>
+                Compras
+            </TextButton>
             <TextButton>
                 +54 351 858 3498
             </TextButton>
