@@ -2,13 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterContainer = styled.footer`
-    margin-top: 40px;
+    margin-top: auto;
     background: #E86B45;
     padding: 40px;
     display: flex;
     justify-content: space-around;
-    min-height: 300px;
     gap: 20px;
+    
+    @media (max-width: 560px) {
+        flex-direction: column;
+    }
 `;
 
 const FooterContent = styled.div`
@@ -49,6 +52,7 @@ const Footer: React.FC = () => {
             <PoliciesInformation>
                 <strong>Políticas</strong>
                 <p>
+                    {/* --> PLACEHOLDER <-- links */}
                     <a href="#">Términos y Condiciones</a>
                     {" · "}
                     <a href="#">Política de Privacidad</a>

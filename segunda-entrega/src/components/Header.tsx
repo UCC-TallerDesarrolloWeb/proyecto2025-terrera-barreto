@@ -4,6 +4,13 @@ import {LogoText, TextButton} from "@components/Typography.tsx";
 import Badge from "@components/Badge.tsx";
 
 import LogoImage from "@assets/images/logo.png";
+import {useLocation, useNavigate} from "react-router-dom";
+import {useCartCount} from "@store/cartStore.ts";
+
+interface Props {
+    onCartButtonClick: () => void;
+
+}
 
 const HeaderContainer = styled.header`
     height: 120px;
@@ -20,6 +27,18 @@ const HeaderContainer = styled.header`
     & > span:last-of-type {
         margin-right: auto;
     }
+
+    @media (max-width: 560px) {
+        gap: 30px;
+    }
+
+    @media (max-width: 500px) {
+        gap: 20px;
+    }
+
+    @media (max-width: 450px) {
+        gap: 10px;
+    }
 `;
 
 const LogoContainer = styled.div`
@@ -33,16 +52,20 @@ const LogoContainer = styled.div`
     }
 `;
 
-const Header: React.FC = () => {
+const Header: React.FC<Props> = ({ onCartButtonClick }) => {
+
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
+    const isPurchases = pathname === "/purchases";
+
+    const count = useCartCount();
+
     return (
         <HeaderContainer>
-            <TextButton>
-                Menú
-            </TextButton>
-            <TextButton>
+            <TextButton onClick={onCartButtonClick}>
                 Carrito
                 <Badge>
-                    4
+                    {count}
                 </Badge>
             </TextButton>
             <LogoContainer>
@@ -51,11 +74,8 @@ const Header: React.FC = () => {
                     Mmmenú
                 </LogoText>
             </LogoContainer>
-            <TextButton>
-                Compras
-            </TextButton>
-            <TextButton>
-                +54 351 858 3498
+            <TextButton onClick={() => navigate(isPurchases ? "/" : "/purchases")}>
+                {isPurchases ? "Home" : "Compras"}
             </TextButton>
         </HeaderContainer>
     );

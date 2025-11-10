@@ -33,6 +33,8 @@
       "@assets/*": ["src/assets/*"],
       "@styles/*": ["src/styles/*"],
       "@data/*": ["src/data/*"],
+      "@utils/*": ["src/utils/*"],
+      "@store/*": ["src/store/*"]
     }
   },
   "include": ["src", "vite-env.d.ts"]

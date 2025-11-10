@@ -1,11 +1,11 @@
-export type ProductSize = "S" | "M" | "L";
+export type TProductSize = "S" | "M" | "L";
 
-export type SizePrices = Partial<Record<ProductSize, number>>;
+export type TSizePrices = Partial<Record<TProductSize, number>>;
 
-export interface Product {
+export interface IProduct {
     id: number;
     name: string;
     description: string;
     image: string;
-    sizes: SizePrices;
+    sizes: TSizePrices;
 }
