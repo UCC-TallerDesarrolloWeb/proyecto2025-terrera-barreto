@@ -18,10 +18,10 @@ Nuestro proyecto de página web llamado **Mmmenu**, consiste en una página de e
 
 ## Autores
 
-| Nombre  | Apellido |
-| ------- | -------- |
-| Barreto | Luciano  |
-| Terrera | Athina   |
+| Nombre   | Apellido |
+|----------| -------- |
+| Luciano  | Barreto  |
+| Athina   | Terrera  |
 
 ---
 

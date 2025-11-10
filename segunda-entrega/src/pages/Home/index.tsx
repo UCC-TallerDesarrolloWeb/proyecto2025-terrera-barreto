@@ -1,10 +1,11 @@
-import React from "react";
-import PageLayout from "@/layout/PageLayout";
+import React, {Fragment} from "react";
 import styled from "styled-components";
 import Button from "@components/Button.tsx";
 import CarouselImage from "@assets/images/carousel_pizza.png";
 import ProductsJson from "@data/products.json";
-import type { Product } from "@/types/product.ts";
+import type {IProduct, TProductSize} from "@/types/product.ts";
+import ProductCard from "@components/ProductCard.tsx";
+import {useCartStore} from "@store/cartStore.ts";
 
 const CarouselContainer = styled.div`
     width: 100%;
@@ -33,6 +34,10 @@ const CarouselContent = styled.div`
         color: #3f3f3f;
         margin-bottom: 16px;
     }
+
+    @media (max-width: 625px) {
+        width: 100%;
+    }
 `;
 
 const ImageContainer = styled.div`
@@ -43,6 +48,10 @@ const ImageContainer = styled.div`
     & img {
         width: 100%;
         margin: auto;
+    }
+
+    @media (max-width: 625px) {
+        display: none;
     }
 `;
 
@@ -74,93 +83,48 @@ const ProductsContainer = styled.div`
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 520px 520px;
     gap: 20px;
-`;
+    margin-bottom: 40px;
 
-const ProductContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: 28px;
-    align-items: center;
-    background: #fff6e7;
-    border-radius: 30px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-
-    & img {
-        width: 100%;
-        margin-bottom: 12px;
+    @media (max-width: 906px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 620px);
     }
 
-    & h4 {
-        font-family: "Poppins", sans-serif;
-        font-size: 24px;
-        font-weight: 500;
+    @media (max-width: 875px) {
+        grid-template-rows: repeat(3, 600px);
     }
 
-    & p {
-        font-family: "Inter", sans-serif;
-        text-align: center;
-        color: #5e5e61;
-        height: 540px;
+    @media (max-width: 760px) {
+        grid-template-rows: repeat(3, 550px);
     }
-    
-    & button {
-        margin-top: auto;
-        width: 100%;
-        border-radius: 100px;
-        padding: 10px;
-    }
-`;
 
-const SizeSelector = styled.div`
-    width: fit-content;
-    display: flex;
-    margin-top: auto;
-    margin-bottom: 10px;
-    gap: 18px;
-
-    & > div:first-child {
-        margin-left: auto;
+    @media (max-width: 680px) {
+        grid-template-rows: repeat(3, 530px);
     }
-    & > div:last-child {
-        margin-right: auto;
+
+    @media (max-width: 640px) {
+        grid-template-rows: repeat(3, 540px);
+    }
+
+    @media (max-width: 560px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 640px;
+    }
+
+    @media (max-width: 500px) {
+        grid-template-rows: 600px;
+    }
+
+    @media (max-width: 450px) {
+        grid-template-rows: 540px;
+    }
+
+    @media (max-width: 380px) {
+        grid-template-rows: 500px;
     }
 `;
 
-const Size = styled.div`
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-
-    &.selected span:first-child {
-        background-color: #ffefcc;
-        border: 1px solid #ff9900;
-    }
-
-    & span {
-        text-align: center;
-        font-family: "Poppins", sans-serif;
-    }
-
-    & span:first-child {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        font-weight: 400;
-        border-radius: 50%;
-        border: dashed 1px rgba(0, 0, 0, 0.65);
-        margin-bottom: 4px;
-        transition: ease-in 0.1s;
-    }
-
-    & span:first-child:hover {
-        background: rgba(0, 0, 0, 0.1);
-    }
-`;
-
-const products: Product[] = ProductsJson as Product[];
+const products: IProduct[] = ProductsJson as IProduct[];
 
 const images = import.meta.glob("/src/assets/images/*", {
     eager: true,
@@ -170,8 +134,29 @@ const images = import.meta.glob("/src/assets/images/*", {
 const srcFor = (name: string) => images["/src/assets/images/" + name];
 
 const Home: React.FC = () => {
+
+    const add = useCartStore((s) => s.add);
+
+    const handleAddToCart = (product: IProduct, selectedSize: string) => {
+        const price = product.sizes[selectedSize as keyof typeof product.sizes];
+        if (price == null) {
+            alert("Tamaño inválido");
+            return;
+        }
+
+        add({
+            id: product.id,
+            name: product.name,
+            size: selectedSize as TProductSize,
+            price,
+            image: srcFor(product.image),
+        });
+
+        alert(`${product.name} (${selectedSize}) agregada al carrito`);
+    };
+
     return (
-        <PageLayout>
+        <Fragment>
             <CarouselContainer>
                 <CarouselContent>
                     <h2>Probá nuestra NUEVA Margarita</h2>
@@ -189,26 +174,15 @@ const Home: React.FC = () => {
 
                 <ProductsContainer>
                     {products.map((product) => (
-                        <ProductContainer key={product.id}>
-                            <img src={srcFor(product.image)} alt={product.name} />
-                            <h4>{product.name}</h4>
-                            <p>{product.description}</p>
-
-                            <SizeSelector>
-                                {Object.entries(product.sizes).map(([size, price]) => (
-                                    <Size key={`${product.id}-size-${size}`}>
-                                        <span>{size}</span>
-                                        <span>${price}</span>
-                                    </Size>
-                                ))}
-                            </SizeSelector>
-
-                            <Button>Agregar al Carrito</Button>
-                        </ProductContainer>
+                        <ProductCard
+                            {...product}
+                            image={srcFor(product.image)}
+                            onButtonClick={(selectedSize: string) => handleAddToCart(product, selectedSize)}
+                        />
                     ))}
                 </ProductsContainer>
             </MenuContainer>
-        </PageLayout>
+        </Fragment>
     );
 };
 

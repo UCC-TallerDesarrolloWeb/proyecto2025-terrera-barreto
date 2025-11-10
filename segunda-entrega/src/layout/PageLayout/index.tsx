@@ -1,12 +1,10 @@
-import React, { type ReactNode } from "react";
+import React, {useState} from "react";
 import PageContainer from "@components/PageContainer";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-
-interface Props {
-    children: ReactNode | ReactNode[];
-}
+import Cart from "@components/Cart";
 
 const ContentContainer = styled.section`
     display: flex;
@@ -16,16 +14,24 @@ const ContentContainer = styled.section`
     padding: 0 60px;
 `;
 
-const PageLayout: React.FC<Props> = ({ children }) => {
+const PageLayout: React.FC = () => {
+    const [showCart, setShowCart] = useState(false);
+
     return (
         <PageContainer>
-            <Header/>
+            <Header onCartButtonClick={() => setShowCart(true)}/>
             <ContentContainer>
-                {children}
+                <Outlet/>
             </ContentContainer>
             <Footer/>
+
+            {showCart && (
+                <Cart setShowCart={setShowCart}>
+
+                </Cart>
+            )}
         </PageContainer>
-    )
+    );
 }
 
 export default PageLayout;
