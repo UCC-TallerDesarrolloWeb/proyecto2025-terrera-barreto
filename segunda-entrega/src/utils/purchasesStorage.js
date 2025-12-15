@@ -1,26 +1,24 @@
-import type {IPurchase} from "@/types/purchase.ts";
-
 const PURCHASES_KEY = "purchases";
 
-const safeParse = <T,>(raw: string | null, fallback: T): T => {
+const safeParse = (raw, fallback) => {
     try {
-        return raw ? (JSON.parse(raw) as T) : fallback;
+        return raw ? JSON.parse(raw) : fallback;
     } catch {
         return fallback;
     }
 };
 
-export const readPurchases = (): IPurchase[] =>
-    safeParse<IPurchase[]>(localStorage.getItem(PURCHASES_KEY), []);
+export const readPurchases = () =>
+    safeParse(localStorage.getItem(PURCHASES_KEY), []);
 
-const writePurchases = (list: IPurchase[]) => {
+const writePurchases = (list) => {
     localStorage.setItem(PURCHASES_KEY, JSON.stringify(list));
 };
 
 const genId = () => (crypto?.randomUUID ? crypto.randomUUID() : `${Date.now()}_${Math.floor(Math.random() * 1e6)}`);
 
-export const addPurchase = (data: Omit<IPurchase, "id" | "createdAt">): IPurchase => {
-    const purchase: IPurchase = {
+export const addPurchase = (data) => {
+    const purchase = {
         id: genId(),
         createdAt: new Date().toISOString(),
         ...data,

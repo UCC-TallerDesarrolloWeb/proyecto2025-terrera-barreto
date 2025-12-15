@@ -1,55 +1,18 @@
 import React from "react";
-import styled from "styled-components";
 
-const FooterContainer = styled.footer`
-    margin-top: auto;
-    background: #E86B45;
-    padding: 40px;
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    
-    @media (max-width: 560px) {
-        flex-direction: column;
-    }
-`;
-
-const FooterContent = styled.div`
-    font-family: "Inter", sans-serif;
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-    
-    & > strong {
-        margin-top: 16px;
-    }
-`;
-
-const ContactInformation = styled(FooterContent)``;
-
-const PoliciesInformation = styled(FooterContent)`
-    text-align: right;
-    
-    & span, a {
-        color: #fff;
-        text-decoration: underline;
-        cursor: pointer;
-    }
-`;
-
-const Footer: React.FC = () => {
+const Footer = () => {
     return (
-        <FooterContainer>
-            <ContactInformation>
+        <footer className="footer">
+            <div className="footer__content">
                 <strong>Contacto</strong>
                 <p>Tel: +54 9 11 1234-5678</p>
                 <p>Email: contacto@mmmenu.com</p>
                 <strong>Dirección</strong>
                 <p>Av. Siempre Viva 123, Córdoba, AR</p>
                 <strong>Horario</strong>
-                <p>Lun–Dom: 12:00 — 23:00</p>
-            </ContactInformation>
-            <PoliciesInformation>
+                <p>Lun-Dom: 12:00 - 23:00</p>
+            </div>
+            <div className="footer__content footer__content--policies">
                 <strong>Políticas</strong>
                 <p>
                     {/* --> PLACEHOLDER <-- links */}
@@ -68,9 +31,9 @@ const Footer: React.FC = () => {
                 <div className="copyright">
                     Copyright © 2025 Mmmenú LLC · Todos los derechos reservados.
                 </div>
-            </PoliciesInformation>
-        </FooterContainer>
+            </div>
+        </footer>
     );
-}
+};
 
 export default Footer;
